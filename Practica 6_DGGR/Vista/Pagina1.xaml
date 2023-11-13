@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica_6_DGGR.Vista.Pagina1"
+             NavigationPage.HasNavigationBar="False">
+    <Grid BackgroundColor="Aqua">
+        <StackLayout VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="#1" TextColor="White" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Entry PlaceholderColor="White" Placeholder="Esciba el numero" HorizontalOptions="StartAndExpand" Text="{Binding N1}" Keyboard="Numeric"/>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="#2" TextColor="White" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Entry PlaceholderColor="White" Placeholder="Esciba el numero" HorizontalOptions="StartAndExpand" Text="{Binding N2}" Keyboard="Numeric"/>
+            </StackLayout>
+
+            
+            <Button Text="sumar" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding Sumarcommand}" TextTransform="None" Background="white" FontAttributes="Bold" CornerRadius="5" TextColor="Black"/>
+            <Label Text="{Binding R}" TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold" FontSize="35"/>
+            <Button Text="Ir a pagina2" HorizontalOptions="Center" CornerRadius="5" BackgroundColor="White" FontAttributes="Bold" Command="{Binding Navegarpagina2command}"></Button>
+     
+        
+        <StackLayout HorizontalOptions="Center"
+                     Orientation="Horizontal">
+            <Label TextColor="White"
+                   FontAttributes="Bold"
+                   Text="Picker:"
+                   VerticalOptions="Center"/>
+                <Picker HorizontalOptions="FillAndExpand"
+                    Title="Selecciones una opcion"
+                    SelectedItem="{Binding SeleccionarTipoUsuario}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Administrador</x:String>
+                            <x:String>Empleado</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Label TextColor="White" FontAttributes="Bold" Text="DataPicker" VerticalOptions="Center"/>
+                <DatePicker MinimumDate="{Binding MinmunDate}"
+                            MaximumDate="{Binding MaximunDate}"
+                            Date="{Binding Date}"></DatePicker>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>
