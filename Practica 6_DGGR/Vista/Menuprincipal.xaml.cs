@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practica_6_DGGR.VistaModelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace Practica_6_DGGR.Vista
         public Menuprincipal()
         {
             InitializeComponent();
+            BindingContext = new VMmenuprincipal(Navigation);
         }
     }
 }

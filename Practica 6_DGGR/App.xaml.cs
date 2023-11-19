@@ -13,7 +13,7 @@ namespace Practica_6_DGGR
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Pagina1());
+            MainPage = new NavigationPage(new Menuprincipal());
         }
 
         protected override void OnStart()

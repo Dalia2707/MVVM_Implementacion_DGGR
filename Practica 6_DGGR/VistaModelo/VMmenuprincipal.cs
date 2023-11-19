@@ -13,13 +13,13 @@ namespace Practica_6_DGGR.VistaModelo
     {
             #region VARIEBLES
             string _Texto;
-            public List<Mmenuprincipal> Listausuarios { get; set; }
+            public List<Mmenuprincipal> ListarPaginas { get; set; }
             #endregion
             #region CONTRUCTOR
             public VMmenuprincipal(INavigation navigation)
             {
                 Navigation = navigation;
-                Mostrarusuarios();
+                MostrarPaginas();
 
             }
             #endregion
@@ -37,9 +37,9 @@ namespace Practica_6_DGGR.VistaModelo
             {
                 await Navigation.PopAsync();
             }
-            public void Mostrarusuarios()
+            public void MostrarPaginas()
             {
-                Listausuarios = new List<Mmenuprincipal>
+                ListarPaginas = new List<Mmenuprincipal>
             {
                 new Mmenuprincipal
                 {
