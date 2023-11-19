@@ -16,16 +16,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Modelo\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Vista\Pagina1.xaml.cs">
       <DependentUpon>Pagina1.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Vista\Crudpokemon.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Vista\Menuprincipal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Vista\Pagina1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
