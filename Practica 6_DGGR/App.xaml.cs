@@ -1,4 +1,5 @@
 ﻿using Practica_6_DGGR.Vista;
+using Practica_6_DGGR.Vista.Pokemon;
 using Practica_6_DGGR.VistaModelo;
 using System;
 using Xamarin.Forms;
@@ -13,7 +14,7 @@ namespace Practica_6_DGGR
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Menuprincipal());
+            MainPage = new NavigationPage(new Listapokemon());
         }
 
         protected override void OnStart()
