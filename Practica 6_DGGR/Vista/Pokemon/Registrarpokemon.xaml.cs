@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Practica_6_DGGR.VistaModelo.VMpokemon;
 
 namespace Practica_6_DGGR.Vista.Pokemon
 {
@@ -15,6 +16,7 @@ namespace Practica_6_DGGR.Vista.Pokemon
 		public Registrarpokemon ()
 		{
 			InitializeComponent ();
+			BindingContext = new VMregistropokkemons(Navigation);
 		}
 	}
 }

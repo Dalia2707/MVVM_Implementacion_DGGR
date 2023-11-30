@@ -9,9 +9,15 @@ namespace Practica_6_DGGR.VistaModelo.VMpokemon
 {
     public class VMregistropokkemons: BaseViewModel
     {
-        #region VARIEBLES
-        string _Texto;
+        #region VARIABLES
+        string _Txtcolorfondo;
+        string _Txtcolorpoder;
+        string _Txtnombre;
+        string _Txtnro;
+        string _Txtpoder;
+        string _Txticono;
         #endregion
+
         #region CONTRUCTOR
         public VMregistropokkemons(INavigation navigation)
         {
@@ -19,11 +25,35 @@ namespace Practica_6_DGGR.VistaModelo.VMpokemon
         }
         #endregion
         #region OBJETOS
-
-        public string Texto
+        public string Txtcolorfondo
         {
-            get { return _Texto; }
-            set { SetValue(ref _Texto, value); }
+            get { return _Txtcolorfondo; }
+            set { SetValue(ref _Txtcolorfondo, value); }
+        }
+        public string Txtcolorpoder
+        {
+            get { return _Txtcolorpoder; }
+            set { SetValue(ref _Txtcolorpoder, value); }
+        }
+        public string Txtnombre
+        {
+            get { return _Txtnombre; }
+            set { SetValue(ref _Txtnombre, value); }
+        }
+        public string Txtnro
+        {
+            get { return _Txtnro; }
+            set { SetValue(ref _Txtnro, value); }
+        }
+        public string Txtpoder
+        {
+            get { return _Txtpoder; }
+            set { SetValue(ref _Txtpoder, value); }
+        }
+        public string Txticono
+        {
+            get { return _Txticono; }
+            set { SetValue(ref _Txticono, value); }
         }
         #endregion
         #region PROCESOS
