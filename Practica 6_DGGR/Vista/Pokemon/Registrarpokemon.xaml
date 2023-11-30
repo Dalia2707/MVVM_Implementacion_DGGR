@@ -7,8 +7,12 @@
     <Grid RowDefinitions="80,*"
          BackgroundColor="#1d1d1d">
         <StackLayout Orientation="Horizontal" Margin="15">
-            <Image Source="flecha1.png" VerticalOptions="Start" HeightRequest="50" HorizontalOptions="Start" Margin="10" WidthRequest="40"/>
-            <Image Source="https://i.ibb.co/h20rD0L/Logo-Pokemon.png" WidthRequest="100" HorizontalOptions="CenterAndExpand" />
+            <Image Source="flecha1.png" VerticalOptions="Start" HeightRequest="50" HorizontalOptions="Start" Margin="10" WidthRequest="40">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Volvercommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+                <Image Source="https://i.ibb.co/h20rD0L/Logo-Pokemon.png" WidthRequest="100" HorizontalOptions="CenterAndExpand" />
             <Image Source="https://i.ibb.co/s1dHhGv/pokebola.png" WidthRequest="100"/>
         </StackLayout>
         <StackLayout Grid.Row="1" Margin="1">
@@ -25,7 +29,7 @@
             <StackLayout Orientation="Horizontal">
                 <Label Text="Numero: " TextColor="White" FontAttributes="Bold" VerticalOptions="Center" FontSize="18"/>
                 <Entry Placeholder="Ingrese el numero" FontAttributes="Bold" TextColor="#ffeb72" PlaceholderColor="White" 
-                       TextTransform="Lowercase" HorizontalOptions="StartAndExpand" Text="{Binding Txtnro}" />
+                       TextTransform="Lowercase" HorizontalOptions="StartAndExpand" Text="{Binding Txtnro}" Keyboard="Numeric"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Icono: " TextColor="White" FontAttributes="Bold" VerticalOptions="Center" FontSize="18"/>
@@ -59,7 +63,7 @@
             </Grid>
             <Frame HorizontalOptions="Center" Padding="4" Margin="0,0,0,0" CornerRadius="15" HasShadow="False" BackgroundColor="#FEC100">
                 <Button Text="+" HorizontalOptions="Center" BackgroundColor="#FEC100" BorderColor="#FFE48B" BorderWidth="4" 
-                        CornerRadius="15" FontAttributes="Bold" FontSize="25" WidthRequest="60" HeightRequest="60"/>
+                        CornerRadius="15" FontAttributes="Bold" FontSize="25" WidthRequest="60" HeightRequest="60" Command="{Binding Insertarcommand}"/>
             </Frame>
         </StackLayout>
     </Grid>

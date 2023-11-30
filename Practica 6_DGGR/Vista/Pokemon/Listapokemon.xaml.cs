@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Practica_6_DGGR.VistaModelo.VMpokemon;
+using Practica_6_DGGR.Vista.Pokemon;
 
 namespace Practica_6_DGGR.Vista.Pokemon
 {
@@ -15,6 +17,7 @@ namespace Practica_6_DGGR.Vista.Pokemon
 		public Listapokemon ()
 		{
 			InitializeComponent ();
+			BindingContext = new VMlistapokemon(Navigation);
 		}
 	}
 }

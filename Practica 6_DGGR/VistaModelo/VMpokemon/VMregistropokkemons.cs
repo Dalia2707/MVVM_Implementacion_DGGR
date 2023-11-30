@@ -1,9 +1,14 @@
-﻿using System;
+﻿using Practica_6_DGGR.Vista.Pokemon;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Practica_6_DGGR.VistaModelo.VMpokemon;
+using Practica_6_DGGR.Modelo;
+using Practica_6_DGGR.Datos;
+
 
 namespace Practica_6_DGGR.VistaModelo.VMpokemon
 {
@@ -57,9 +62,24 @@ namespace Practica_6_DGGR.VistaModelo.VMpokemon
         }
         #endregion
         #region PROCESOS
-        public async Task ProcesoAsyncrono()
-        {
 
+        public async Task Insertar()
+        {
+            var funcion = new Dpokemon();
+            var parametros = new Mpokemoncs();
+            parametros.ColorFondo = Txtcolorfondo;
+            parametros.ColorPoder = Txtcolorpoder;
+            parametros.Icono = Txticono;
+            parametros.Nombre = Txtnombre;
+            parametros.NoOrden = Txtnro;
+            parametros.Poder = Txtpoder;
+
+            await funcion.InsertarPokemon(parametros);
+            await Volver();
+        }
+        public async Task Volver()
+        {
+            await Navigation.PopAsync();
         }
         public void ProcesoSimple()
         {
@@ -67,7 +87,8 @@ namespace Practica_6_DGGR.VistaModelo.VMpokemon
         }
         #endregion
         #region COMANDO
-        public ICommand ProcesoAsyncommand => new Command(async () => await ProcesoAsyncrono());
+        public ICommand Insertarcommand => new Command(async () => await Insertar());
+        public ICommand Volvercommand => new Command(async () => await Volver());
         public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
         #endregion
     }

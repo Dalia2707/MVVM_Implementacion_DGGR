@@ -11,8 +11,28 @@
                FontSize="28"
                FontAttributes="Bold"
                TextColor="#FD8298"/>
-        <CollectionView BackgroundColor="#EAEDEC" Grid.Row="1">
-            
+        <CollectionView BackgroundColor="#EAEDEC" Grid.Row="1" ItemsSource="{Binding Listapokemon}" Margin="0,0,0,0">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="10" VerticalItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowDefinitions="100, *" Margin="0,10,0,0">
+                        <Frame Grid.Row="1" WidthRequest="250" HorizontalOptions="Center" CornerRadius="15" Margin="5,-38,5,0" BackgroundColor="{Binding ColorFondo}" HasShadow="False">
+                            <StackLayout Margin="0,70,0,0">
+                                <Label Text="{Binding NoOrden}"/>
+                                <Label Text="{Binding Nombre}" CharacterSpacing="1" FontSize="20" Margin="0,0,0,0" />
+                                <Button Text="{Binding Poder}" CornerRadius="30" HorizontalOptions="Start" TextTransform="None" HeightRequest="40" BackgroundColor="{Binding ColorPoder}"/>
+                            </StackLayout>
+                        </Frame>
+                        <Image Source="{Binding Icono}" Grid.RowSpan="2"
+                               HeightRequest="160" VerticalOptions="StartAndExpand"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
         </CollectionView>
+        <Button Text="+"  Grid.Row="1" HorizontalOptions="End" BackgroundColor="#FEC100" BorderColor="#FFE48B" BorderWidth="4" 
+        CornerRadius="50" FontAttributes="Bold" FontSize="50" WidthRequest="100" HeightRequest="100" VerticalOptions="End" Margin="15"
+            Command="{Binding Iraregistrocommand}"/>
     </Grid>
 </ContentPage>
