@@ -6,9 +6,49 @@
     
     <Grid RowDefinitions="80,*"
          BackgroundColor="#1d1d1d">
-        <StackLayout Orientation="Horizontal" Padding="15">
+        <StackLayout Orientation="Horizontal" Margin="15">
             <Image Source="flecha1.png" VerticalOptions="Start" HeightRequest="50" HorizontalOptions="Start" Margin="10" WidthRequest="40"/>
-            <Image Source="https://i.ibb.co/h20rD0L/Logo-Pokemon.png" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Image Source="https://i.ibb.co/h20rD0L/Logo-Pokemon.png" WidthRequest="100" HorizontalOptions="CenterAndExpand" />
+            <Image Source="https://i.ibb.co/s1dHhGv/pokebola.png" WidthRequest="100"/>
+        </StackLayout>
+        <StackLayout Grid.Row="1" Margin="10">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Nombre: " TextColor="White" FontAttributes="Bold" VerticalOptions="Center" FontSize="18"/>
+                <Entry Placeholder="Ingrese el nombre" FontAttributes="Bold" TextColor="#ffeb72" PlaceholderColor="White" 
+                       TextTransform="Lowercase" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Color de fondo: " TextColor="White" FontAttributes="Bold" VerticalOptions="Center" FontSize="18"/>
+                <Entry Placeholder="Ingrese color de fondo" FontAttributes="Bold" TextColor="#ffeb72" PlaceholderColor="White" 
+                       TextTransform="Lowercase" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Numero: " TextColor="White" FontAttributes="Bold" VerticalOptions="Center" FontSize="18"/>
+                <Entry Placeholder="Ingrese el numero" FontAttributes="Bold" TextColor="#ffeb72" PlaceholderColor="White" 
+                       TextTransform="Lowercase" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Icono: " TextColor="White" FontAttributes="Bold" VerticalOptions="Center" FontSize="18"/>
+                <Entry Placeholder="Ingrese el Icono" FontAttributes="Bold" TextColor="#ffeb72" PlaceholderColor="White" 
+                       TextTransform="Lowercase" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Poder: " TextColor="White" FontAttributes="Bold" VerticalOptions="Center" FontSize="18"/>
+                <Entry Placeholder="Ingrese el Poder" FontAttributes="Bold" TextColor="#ffeb72" PlaceholderColor="White" 
+                       TextTransform="Lowercase" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Color Poder: " TextColor="White" FontAttributes="Bold" VerticalOptions="Center" FontSize="18"/>
+                <Entry Placeholder="Ingrese el Color poder" FontAttributes="Bold" TextColor="#ffeb72" PlaceholderColor="White" 
+                       TextTransform="Lowercase" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Image Source="https://i.ibb.co/g4fk4Nh/ojo.png" HeightRequest="20"/>
+                <Label Text="Vista Previa" FontSize="20" TextColor="White" FontAttributes="Italic" VerticalOptions="Center"/>
+            </StackLayout>
+            <Grid RowDefinitions="100, *">
+                
+            </Grid>
         </StackLayout>
     </Grid>
 </ContentPage>
