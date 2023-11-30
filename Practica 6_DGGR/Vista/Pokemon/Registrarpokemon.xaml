@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Practica_6_DGGR.Vista.Pokemon.Registrarpokemon">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             x:Class="Practica_6_DGGR.Vista.Pokemon.Registrarpokemon"
+             NavigationPage.HasNavigationBar="False">
+    
+    <Grid RowDefinitions="80,*"
+         BackgroundColor="#1d1d1d">
+        <StackLayout Orientation="Horizontal" Padding="15">
+            <Image Source="flecha1.png" VerticalOptions="Start" HeightRequest="50" HorizontalOptions="Start" Margin="10" WidthRequest="40"/>
+            <Image Source="https://i.ibb.co/h20rD0L/Logo-Pokemon.png" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center"/>
         </StackLayout>
-    </ContentPage.Content>
+    </Grid>
 </ContentPage>

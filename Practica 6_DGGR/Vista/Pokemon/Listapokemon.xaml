@@ -11,8 +11,8 @@
                FontSize="28"
                FontAttributes="Bold"
                TextColor="#FD8298"/>
-            <CollectionView BackgroundColor="#EAEDEC" Grid.Row="1">
-
-            </CollectionView>
-        </Grid>
+        <CollectionView BackgroundColor="#EAEDEC" Grid.Row="1">
+            
+        </CollectionView>
+    </Grid>
 </ContentPage>

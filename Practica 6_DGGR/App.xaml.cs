@@ -14,7 +14,7 @@ namespace Practica_6_DGGR
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Listapokemon());
+            MainPage = new NavigationPage(new Registrarpokemon());
         }
 
         protected override void OnStart()
