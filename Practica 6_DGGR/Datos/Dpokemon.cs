@@ -26,8 +26,7 @@ namespace Practica_6_DGGR.Datos
                      Nombre = parametros.Nombre,
                      NoOrden = parametros.NoOrden,
                      Poder = parametros.Poder
-                 }
-                 );
+                 });
         }
 
         public async Task<ObservableCollection<Mpokemoncs>> MostrarPokemones()
@@ -50,6 +49,36 @@ namespace Practica_6_DGGR.Datos
             //        NoOrden = item.Object.NoOrden,
             //        Poder = item.Object.Poder
             //    }).ToList();
+        }
+        public async Task ModificarPokemon(Mpokemoncs datosActualizados)
+        {
+            var actualizar = (await Cconexion
+                .firebase.Child("Pokemon")
+                .OnceAsync<Mpokemoncs>())
+                .Where(a => a.Object.Idpokemon == datosActualizados.Idpokemon).FirstOrDefault();
+
+            await Cconexion.firebase
+                .Child("Pokemon")
+                .Child(actualizar.Key)
+                .PutAsync(new Mpokemoncs()
+                {
+                    Idpokemon = datosActualizados.Idpokemon,
+                    ColorFondo = datosActualizados.ColorFondo,
+                    ColorPoder = datosActualizados.ColorPoder,
+                    NoOrden = datosActualizados.NoOrden,
+                    Icono = datosActualizados.Icono,
+                    Nombre = datosActualizados.Nombre,
+                    Poder = datosActualizados.Poder
+                });
+        }
+        //Se agrego
+        public async Task BorrarPokemon(Guid idPokemon)
+        {
+            var pokemonABorrar = (await Cconexion.firebase
+                .Child("Pokemon")
+                .OnceAsync<Mpokemoncs>()).Where(a => a.Object.Idpokemon == idPokemon).FirstOrDefault();
+
+            await Cconexion.firebase.Child("Pokemon").Child(pokemonABorrar.Key).DeleteAsync();
         }
     }
 }

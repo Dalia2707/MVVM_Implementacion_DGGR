@@ -11,7 +11,14 @@
                FontSize="28"
                FontAttributes="Bold"
                TextColor="#FD8298"/>
-        <CollectionView BackgroundColor="#EAEDEC" Grid.Row="1" ItemsSource="{Binding Listapokemon}" Margin="0,0,0,0">
+        <CollectionView BackgroundColor="#EAEDEC"
+                        Grid.Row="1"
+                        ItemsSource="{Binding Listapokemon}"
+                        Margin="10,5,10,0"
+ 
+                        SelectionMode="Single"
+                        SelectedItem="{Binding PokemonSeleccionado}"
+                        SelectionChangedCommand="{Binding AbrirVistaModificarcommand}">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="10" VerticalItemSpacing="10"/>
             </CollectionView.ItemsLayout>

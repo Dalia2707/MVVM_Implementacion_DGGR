@@ -15,8 +15,9 @@ namespace Practica_6_DGGR.VistaModelo.VMpokemon
     public class VMlistapokemon : BaseViewModel
     {
         #region VARIEBLES
-        string _Texto;
+        string _Nombre;
         ObservableCollection<Mpokemoncs> _Listapokemon;
+        Mpokemoncs _PokemonSeleccionado;
         #endregion
         #region CONTRUCTOR
         public VMlistapokemon(INavigation navigation)
@@ -35,6 +36,17 @@ namespace Practica_6_DGGR.VistaModelo.VMpokemon
                 OnpropertyChanged();
             }
         }
+        public Mpokemoncs PokemonSeleccionado
+        {
+            get { return _PokemonSeleccionado; }
+            set
+            {
+                if (_PokemonSeleccionado != value)
+                {
+                    _PokemonSeleccionado = value;
+                }
+            }
+        }
         #endregion
         #region PROCESOS
 
@@ -47,6 +59,10 @@ namespace Practica_6_DGGR.VistaModelo.VMpokemon
         {
             await Navigation.PushAsync(new Registrarpokemon());
         }
+        public async Task AbrirVistaModificar()
+        {
+            await Navigation.PushAsync(new Modificar(PokemonSeleccionado));
+        }
         public void ProcesoSimple()
         {
 
@@ -54,7 +70,7 @@ namespace Practica_6_DGGR.VistaModelo.VMpokemon
         #endregion
         #region COMANDO
         public ICommand Iraregistrocommand => new Command(async () => await Iraregistro());
-        public ICommand Mostrarpokemoncommand => new Command(async () => await Mostrarpokemon());
+        public ICommand AbrirVistaModificarcommand => new Command(async () => await AbrirVistaModificar());
         public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
         #endregion
     }
